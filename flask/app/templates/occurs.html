@@ -1,0 +1,91 @@
+<!--file name : index.html-->
+<!--pwd : /project_name/app/templates/main/index.html-->
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://bootstrapk.com/examples/starter-template/# -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/img/motionGuard.ico">
+ 
+    <title>MotionGuard Test Webpage</title>
+ 
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <!-- Custom styles for this template -->
+    <link href="/static/css/starter-template.css" rel="stylesheet">
+ 
+  </head>
+ 
+  <body>
+ 
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">MotionGuard</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/occursList">Occurs</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+ 
+    <div class="container">
+ 
+      <div class="starter-template">
+        <h1>Occurs</h1>
+        {% for c in cctv%}
+        
+        <p class="lead">검출영상</p>
+    
+        <video controls width="250">
+
+            <source src="/static/img/occursVideo/{{today.day}}/{{c.title}}"
+                    type="video/mp4">
+        
+            아직 검출된 동영상이 없습니다! 확인 부탁드립니다!
+        </video>
+        
+        {% endfor %}
+      </div>
+      
+      <div class ="starter-template">
+          <form method="get">
+              <button name="temp" type ="submit" value="1">Standing</button>
+              <button name="temp" type ="submit" value="2">Sitting</button>
+              <button name="temp" type ="submit" value="3">Folding</button>
+              <button name="temp" type ="submit" value="4">Stun</button>
+              <button name="temp" type ="submit" value="5">Fall</button>
+              <button name="temp" type ="submit" value="-1">Cancel</button>
+          </form>
+       <div>
+
+      </form>
+    </div><!-- /.container -->
+ 
+ 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+ 
+</body></html>
